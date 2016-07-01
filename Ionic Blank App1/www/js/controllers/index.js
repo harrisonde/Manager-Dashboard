@@ -1,7 +1,8 @@
-﻿angular
-    .module('starter',[])
-	.controller('IndexController', ['$scope', function ($scope, Login) {
-    	$scope.submitLogin = function () {
-    	    Login.getAppKey();
-    	}
-    }]);
+﻿'use strict';
+
+angular.module('starter.controllers',[])
+	.controller('IndexController', ['$scope', 'authenticationService', function ($scope, authenticationService) {
+		$scope.submitLogin = function () {
+			authenticationService.getToken();
+		}
+	}]);
